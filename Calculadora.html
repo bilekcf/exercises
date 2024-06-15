@@ -21,6 +21,10 @@
     return a / b
   }
 
+  function porcentagem(a, b) {
+    return a % b
+  }
+
   // Variáveis que solicitam ao usuário os números e a operação a ser realizada.
   var num1 = Number(prompt("Número 1: "));
   var num2 = Number(prompt("Número 2: "));
@@ -36,6 +40,8 @@
     resultado = multiplicacao(num1, num2)
   } else if (op == "/") {
     resultado = divisao(num1, num2)
+  } else if (op == "%") {
+    resultado = porcentagem(num1, num2)
   }
 
   // Variável que exibe o resultado da operação.
