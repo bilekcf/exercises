@@ -68,7 +68,6 @@
 
     // Alerta que exibe o resultado da operação.
     alert("Resultado: " + resultado);
-    comparadores();
   }
 
 
@@ -87,7 +86,6 @@
     // Exibir o maior número entre três números
     alert("O maior número entre " + numComparacao1 + ", " + numComparacao2 + " e " + numComparacao3 + " é " + maior3(numComparacao1, numComparacao2, numComparacao3));
 
-    triangulo();
   }
 
 
@@ -105,15 +103,14 @@
     } else {
       // Alerta que exibe a mensagem de que os valores informados não formam um triângulo.
       alert("ERRO: Os valores informados não formam um triângulo.")
-      return false;
     }
-
-
-    // Chamada das funções calculadora e comparadores 2 e 3 números e a mensagem de encerramento do programa.
-    calculadora();
-
-    alert("Fim do programa, obrigado por testar! Att: Bilek");
   }
+
+  calculadora();
+  comparadores();
+  triangulo();
+
+
 
 </script>
 
