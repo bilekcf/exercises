@@ -4,48 +4,116 @@
 <title>Calculadora Bilek</title>
 <script>
 
-  // Declaração das funções	de soma, subtração, multiplicação e divisão.
+  // Declaração das funções de soma, subtracao, multiplicação e divisão.
   function soma(a, b) {
-    return a + b
+    return a + b;
   }
 
   function subtracao(a, b) {
-    return a - b
+    return a - b;
   }
 
   function multiplicacao(a, b) {
-    return a * b
+    return a * b;
   }
 
   function divisao(a, b) {
-    return a / b
+    return a / b;
   }
 
   function porcentagem(a, b) {
-    return a % b
+    return a % b;
   }
 
-  // Variáveis que solicitam ao usuário os números e a operação a ser realizada.
-  var num1 = Number(prompt("Número 1: "));
-  var num2 = Number(prompt("Número 2: "));
-  var op = prompt("Operação:")
-
-  // Variável que armazena o resultado da operação.
-  var resultado
-  if (op == "+") {
-    resultado = soma(num1, num2)
-  } else if (op == "-") {
-    resultado = subtracao(num1, num2)
-  } else if (op == "*") {
-    resultado = multiplicacao(num1, num2)
-  } else if (op == "/") {
-    resultado = divisao(num1, num2)
-  } else if (op == "%") {
-    resultado = porcentagem(num1, num2)
+  // Função para retornar o maior de dois números
+  function maior2(a, b) {
+    if (a > b) {
+      return a;
+    } else {
+      return b;
+    }
   }
 
-  // Variável que exibe o resultado da operação.
-  alert("Resultado: " + resultado);
+  // Função para retornar o maior de três números
+  function maior3(a, b, c) {
+    if (a > b && a > c) {
+      return a;
+    } else if (b > c) {
+      return b;
+    } else {
+      return c;
+    }
+  }
+
+  function calculadora() {
+    // Variáveis que solicitam ao usuário os números e a operação a ser realizada.
+    alert("Calculadora Bilek: Digite dois números e a operação desejada (+, -, *, /, %)");
+    var num1 = Number(prompt("Número 1: "));
+    var num2 = Number(prompt("Número 2: "));
+    var op = prompt("Operação:");
+
+    // Variável que armazena o resultado da operação.
+    var resultado;
+    if (op == "+") {
+      resultado = soma(num1, num2);
+    } else if (op == "-") {
+      resultado = subtracao(num1, num2);
+    } else if (op == "*") {
+      resultado = multiplicacao(num1, num2);
+    } else if (op == "/") {
+      resultado = divisao(num1, num2);
+    } else if (op == "%") {
+      resultado = porcentagem(num1, num2);
+    }
+
+    // Alerta que exibe o resultado da operação.
+    alert("Resultado: " + resultado);
+    comparadores();
+  }
+
+
+
+  function comparadores() {
+    // Variáveis que serão comparadas
+    alert("Digite três números para comparação, para vermos qual é o maior entre eles.");
+    var numComparacao1 = Number(prompt("Número 1: "));
+    var numComparacao2 = Number(prompt("Número 2: "));
+    var numComparacao3 = Number(prompt("Número 3: "));
+
+
+    // Exibir o maior número entre dois números
+    alert("O maior número entre " + numComparacao1 + " e " + numComparacao2 + " é " + maior2(numComparacao1, numComparacao2));
+
+    // Exibir o maior número entre três números
+    alert("O maior número entre " + numComparacao1 + ", " + numComparacao2 + " e " + numComparacao3 + " é " + maior3(numComparacao1, numComparacao2, numComparacao3));
+
+    triangulo();
+  }
+
+
+  function triangulo() {
+    //Variáveis que solicitam ao usuário os valores dos lados do triângulo.
+    var lado1 = Number(prompt("Digite o valor do lado 1: "));
+    var lado2 = Number(prompt("Digite o valor do lado 2: "));
+    var lado3 = Number(prompt("Digite o valor do lado 3: "));
+
+    if (lado1 + lado2 + lado3 == 180 && lado1 > 0 && lado2 > 0 && lado3 > 0) {
+      // Alerta que exibe a mensagem de que os valores informados formam um triângulo.
+      alert("Os valores informados formam um triângulo.")
+      return true;
+
+    } else {
+      // Alerta que exibe a mensagem de que os valores informados não formam um triângulo.
+      alert("ERRO: Os valores informados não formam um triângulo.")
+      return false;
+    }
+
+
+    // Chamada das funções calculadora e comparadores 2 e 3 números e a mensagem de encerramento do programa.
+    calculadora();
+
+    alert("Fim do programa, obrigado por testar! Att: Bilek");
+  }
 
 </script>
 
