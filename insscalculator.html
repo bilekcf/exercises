@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 7</title>
+</head>
+
+<body>
+  <script>
+
+
+    var salariobruto = 3000.00;
+
+    function calcsalarioliquido(salariobruto) {
+      // variaveis INSS
+
+      const faixa1_inss = 1556.94;
+      const faixa2_inss = 2594.93;
+      const faixa3_inss = 5189.82;
+      const aliq_inss1 = 0.08;
+      const aliq_inss2 = 0.09;
+      const aliq_inss3 = 0.11;
+
+      //variaveis IR
+
+      const faixa1_ir = 2826.65;
+      const faixa2_ir = 3751.05;
+      const faixa3_ir = 4664.68;
+      const aliq_ir1 = 0.075;
+      const aliq_ir2 = 0.15;
+      const aliq_ir3 = 0.225;
+      const aliq_ir4 = 0.275
+      const dedu1 = 142.80;
+      const dedu2 = 354.80;
+      const dedu3 = 636.13;
+      const dedu4 = 869.36;
+
+
+
+      let inss, ir;
+
+      //calculadora do inss
+
+      if (salariobruto <= faixa1_inss) {
+        inss = salariobruto * aliq_inss1;
+      } else if (salariobruto > faixa1_inss) {
+        inss = salariobruto * aliq_inss2;
+      } else if (salariobruto > faixa2_inss) {
+        inss = salariobruto * aliq_inss3;
+      }
+
+      alert(`INSS: R$ ${inss.toFixed(2)}`);
+
+      let salariobase = salariobruto - inss;
+      alert(`Salário Base (após INSS): R$ ${salariobase.toFixed(2)}`);
+
+      //calculadora do ir
+
+      if (salariobase <= 1903.98) {
+        ir = 0.0;
+      } else if (salariobase <= 2865.65) {
+        ir = (salariobase * aliq_ir1) - dedu1;
+      } else if (salariobase <= 3751.05) {
+        ir = (salariobase * aliq_ir2) - dedu2;
+      } else if (salariobase > 3751.05) {
+        ir = (salariobase * aliq_ir3) - dedu3;
+      } else {
+        ir = (salariobase > faixa3_ir) - dedu4;
+      }
+      alert(`IR: R$ ${ir.toFixed(2)}`);
+
+      let salarioliquido = salariobase - ir;
+      alert(`Salário Líquido: R$ ${salarioliquido.toFixed(2)}`);
+
+      alert("Obrigado por testar!");
+
+      return salarioliquido;
+    }
+
+    calcsalarioliquido(salariobruto);
+
+  </script>
+
+</body>
+
+</html>

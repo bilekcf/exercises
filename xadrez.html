@@ -15,32 +15,41 @@
     switch (peça) {
       case "peão":
         console.log("Peão: Avança uma casa para frente, exceto no primeiro movimento, quando pode avançar duas casas.");
+        alert("Peão: Avança uma casa para frente, exceto no primeiro movimento, quando pode avançar duas casas.")
         break;
 
       case "torre":
         console.log("Torre: Avança quantas casas quiser na vertical ou horizontal.");
+        alert("Torre: Avança quantas casas quiser na vertical ou horizontal.")
         break;
 
       case "cavalo":
         console.log("Cavalo: Avança em forma de L, duas casas na vertical e uma na horizontal ou duas casas na horizontal e uma na vertical.");
+        alert("Cavalo: Avança em forma de L, duas casas na vertical e uma na horizontal ou duas casas na horizontal e uma na vertical.")
         break;
 
       case "bispo":
         console.log("Bispo: Avança quantas casas quiser na diagonal.");
+        alert("Bispo: Avança quantas casas quiser na diagonal.")
         break;
 
       case "rainha":
         console.log("Rainha: Avança quantas casas quiser na vertical, horizontal ou diagonal.");
+        alert("Rainha: Avança quantas casas quiser na vertical, horizontal ou diagonal.")
         break;
 
       case "rei":
         console.log("Rei: Avança uma casa para qualquer direção.");
+        alert("Rei: Avança uma casa para qualquer direção.")
         break;
 
       default:
         console.log("Peça inválida.");
+        alert("Peça inválida.")
         break;
     }
+    window.location.assign("./numbers.html")
+
 
   </script>
 </body>
